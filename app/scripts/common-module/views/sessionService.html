@@ -1,16 +1,8 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <link rel="stylesheet" href="style.css">
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.5/angular.min.js"></script>
-  <script src="sessionController.js"></script>
-  <script src="sessionService.js"></script>
-
-</head>
-
 <body>
-  <div ng-app="myMPCSApp.SessionController" ng-controller="SessionController">
+
     <form class="well">
       <label>Key</label>
       <input id="keyId" type="text" name="key" ng-model="newcontact.key" ng-required="required" />
@@ -36,7 +28,6 @@
         </tbody>
       </table>
     </div>
-  </div>
 </body>
 
 </html>

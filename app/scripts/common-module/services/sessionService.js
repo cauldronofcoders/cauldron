@@ -1,4 +1,5 @@
-module.service('SessionService', function() {
+
+angular.module('myMPCSApp.sessionService', []).service('SessionService', function() {
 
 // flag to check that sessionStorage is supported or not
 var isSessionStorageSupported = false;
