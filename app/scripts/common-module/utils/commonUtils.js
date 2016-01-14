@@ -1,5 +1,5 @@
 /**
- * @description creating a module extending TestApp
+ * @description creating a module extending myMPCSApp
  */
 angular.module('myMPCSApp.commonUtil', [])
     .service('commonUtils', function() {
