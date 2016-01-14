@@ -1,11 +1,7 @@
 
 angular.module('myMPCSApp.service',[])
 .service("sortService", function(URL_CONST) {
-
-
  var fileName="";
- 
-
   /*
   @name getFileName
   @description returns the appropriate JSON file as per selection of radio button
