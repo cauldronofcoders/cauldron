@@ -1,0 +1,14 @@
+<h1>Generic Filters</h1>
+<div>
+    <strong>Capitalize: Captilize first character</strong><br/>
+    <input ng-model="stringToCapitalize" type="text" placeholder="Start typing here">
+    <br> Without filter: {{stringToCapitalize}}
+    <br> After applying capitalize filter: {{stringToCapitalize|capitalizeFilter}}
+    <br>
+    <br>
+    <strong>Format MDN: getting MDN in format <i>343 245-353</i></strong><br/>
+    <input ng-model="mdnToBeFormatted" type="text" placeholder="Please type MDN here" maxlength="9">
+    <br> Without Filter: {{mdnToBeFormatted}}
+    <br> After applying MDN filter: {{mdnToBeFormatted|formatMDN}}
+    <br>
+  </div>

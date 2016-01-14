@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width"> 
+  </head>
+  <body ng-app="myMPCSApp">
+   <!-- Angular libraries are included here -->
+    <script src="../lib/angular.js"></script>
+    <script src="../lib/angular-ui-router.min.js"></script>
+	 <!-- Configs are included here -->
+    <script src="./scripts/common-module/app.js"></script>
+    <script src="./scripts/common-module/config.js"></script>
+	
+	<!--files for POC's-->
+	<script src="./scripts/common-module/contollers/common-filter-controller.js"></script>
+	<script src="./scripts/common-module/contollers/sort-controller.js"></script>
+	<script src="./scripts/common-module/services/sort-service.js"></script>
+	<script src="./scripts/common-module/directives/validate-email-directive.js"></script>
+	<script src="./scripts/common-module/directives/validate-telephone-directive.js"></script>
+	<script src="./scripts/common-module/directives/validate-zipcode-directive.js"></script>
+	<script src="./scripts/common-module/model/factory/sort-factory.js"></script>
+	<script src="./scripts/common-module/filter/capitalize-filter.js"></script>
+	<script src="./scripts/common-module/filter/format-mdn-filter.js"></script>
+	<script src="./scripts/common-module/contollers/common-api-controller.js"></script>
+	<script src="./scripts/common-module/model/factory/api-factory.js"></script>
+	<script src="./scripts/common-module/utils/commonUtils.js"></script>
+	<script src="./scripts/common-module/utils/urlUtils.js"></script>
+	<script src="./scripts/common-module/services/exceptionHandlerService.js"></script>
+	<script src="./scripts/common-module/contollers/exceptionHandlerController.js"></script>
+	<script src="./scripts/common-module/model/factory/paymentMethodFactory.js"></script>
+	<script src="./scripts/common-module/model/factory/search-factory.js"></script>
+	<script src="./scripts/common-module/contollers/search-controller.js"></script>
+	<script src="./scripts/common-module/services/search-service.js"></script>
+     
+      <div ui-view></div>
+   
+  </body>
+</html>
