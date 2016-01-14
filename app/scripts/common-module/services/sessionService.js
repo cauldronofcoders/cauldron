@@ -1,4 +1,4 @@
-module.service('ContactService', function() {
+module.service('SessionService', function() {
 
 // flag to check that sessionStorage is supported or not
 var isSessionStorageSupported = false;
