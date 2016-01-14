@@ -35,6 +35,11 @@
         templateUrl: 'scripts/common-module/views/search-records.html',
         controller : 'searchCtrl'
       })
+    .state('sessionServiceDemo', {
+        url: '/sessionServiceDemo',
+        templateUrl: 'scripts/common-module/views/sessionService.html',
+        controller : 'SessionController'
+      })
 	$urlRouterProvider.otherwise('/commonLanding');
   })
   .constant('URL_CONST', {
