@@ -1,0 +1,22 @@
+<h1>Type and click Search to get Results</h1>
+   <div>
+    <div>
+
+      <label><input ng-model="searchText" placeholder="Type Company gender or name"> <button ng-click="dosearch()">Search</button>
+          Hint: Type any character
+        </label>
+
+     </div> 
+
+    <table>
+
+  <tr ng-show="friends.length"><th>Company</th><th>Gender</th><th>Name</th></tr>
+  
+  <tr ng-repeat="friend in friends">
+   <td >{{friend.company}}</td>
+    <td>{{friend.gender}}</td>
+    <td>{{friend.name}}</td>
+  </tr>
+</table>     
+</div>
+  
