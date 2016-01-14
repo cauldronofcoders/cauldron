@@ -46,4 +46,9 @@
     'GET_REQUEST_BASE_URL_WITH_PARAM_FILE_NAME': 'drivers/{id}/driverStandings.json',
     'POST_REQUEST_BASE_URL': 'http://posttestserver.com/',
     'POST_REQUEST_FILE_NAME': 'post.php',
+    'BASE_URL':'http://mangeshwanjari-test.apigee.net/v1/sortedData',
+    'EARLIER_DATES_FIRST':'earlierDatesFirst',
+    'HIGH_TO_LOW':'hightoLow',
+    'LATER_DATES_FIRST':'laterDatesFirst',
+    'LOW_TO_HIGH':'lowToHigh'
 });
