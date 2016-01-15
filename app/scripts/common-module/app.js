@@ -20,4 +20,6 @@
                                'myMPCSApp.searchController',
                                'myMPCSApp.searchService',
                                'myMPCSApp.searchFactory',
+                               'myMPCSApp.sessionController',
+                               'myMPCSApp.sessionService'
                                ]);
