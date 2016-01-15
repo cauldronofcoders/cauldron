@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <form class="well">
+      <label>Key</label>
+      <input id="keyId" type="text" name="key" ng-model="newcontact.key" ng-required="required" />
+      <br><br>
+      <label>Value</label>
+      <input type="text" name="value" ng-model="newcontact.value" />
+      <br><br>
+      <input type="button" value="Save" ng-click="saveContact()" class="btn btn-primary" />
+      <input type="button" value="Search" ng-click="getItem()" class="btn btn-primary" />
+      <input type="button" value="Remove All" ng-click="removeAll()" class="btn btn-primary" />
+    </form>
+
+    <div ng-show="isSaveClicked">Data has been saved.</div>
+
+    <div ng-show="isGetClicked">Search Result is displayed below :
+
+      <table>
+        <tbody>
+          <tr>
+            <td>{{searchResult}}</td>
+            <td ng-hide="isRemoved"><a href="#" ng-click="remove()">Remove</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</body>
+
+</html>

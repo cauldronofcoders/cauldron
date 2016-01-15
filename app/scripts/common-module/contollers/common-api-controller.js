@@ -1,5 +1,5 @@
 /*
-* @description creating a module extending TestApp
+* @description creating a module extending myMPCSApp
 * All API URLs for GET and POST call are dummy 
 */
 angular.module('myMPCSApp.apiController',[]).
