@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script data-require="angular.js@1.4.1" data-semver="1.4.1" src="https://code.angularjs.org/1.4.1/angular.js"></script>
+  <style>
+    table, th, td {
+      border: 1px solid green;
+    }
+    table {
+      width: 100%;
+    }
+    td.col {
+      max-width: 100px;
+      width: 100px;
+      overflow:auto;
+    }
+    .issue {
+      word-wrap: break-word;
+    }
+    .element {
+      overflow: auto;
+    }
+    .description {
+      max-width: 200px;
+      width: 200px;
+    }
+    .ERROR {
+      color: red;
+    }
+    .WARNING {
+      color: rgb(255, 116, 0);
+    }
+    .NOTICE {
+      color: rgb(195, 205, 43);
+    }
+    .export-csv {
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body ng-app="report" ng-controller="ReportController as report">
+  <h1>Rebellion Accessibility Report <a href="./accessibility-report.csv"><button>Export CSV</button></a></h1>
+  <p ng-show="::report.numErrors" class="ERROR">Errors: {{::report.numErrors}}</p>
+  <p ng-show="::report.numWarnings" class="WARNING">Warnings: {{::report.numWarnings}}</p>
+  <p ng-show="::report.numNotices" class="NOTICE">Notices: {{::report.numNotices}}</p>
+  <table>
+    <thead>
+      <tr>
+        <th>File</th>
+        <th>URL</th>
+        <th>State</th>
+        <th>Heading</th>
+        <th>Issue</th>
+        <th>Element</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody ng-repeat="row in ::report.data">
+      <tr ng-if="row.states.length===0">
+        <td class="col">{{::row.file}}</td>
+        <td class="col">
+          No URL directly associated to template.
+        </td>
+        <td class="col">
+          No state directly associated to template.
+        </td>
+        <td class="col {{::row.heading}}">{{::row.heading}}</td>
+        <td class="issue col">{{::row.issue}}</td>
+        <td class="description element">{{::row.tag}}</td>
+        <td class="description">{{::row.description}}</td>
+      </tr>
+      <tr ng-repeat="state in row.states">
+        <td class="col" rowspan="{{row.states.length}}" ng-if="!($index%row.states.length)">{{::row.file}}</td>
+        <td class="col">
+          {{state.url}}
+        </td>
+        <td class="col">
+          {{state.name}}
+        </td>
+        <td class="col {{::row.heading}}" rowspan="{{row.states.length}}" ng-if="!($index%row.states.length)">{{::row.heading}}</td>
+        <td class="issue col" rowspan="{{row.states.length}}" ng-if="!($index%row.states.length)">{{::row.issue}}</td>
+        <td class="description element" rowspan="{{row.states.length}}" ng-if="!($index%row.states.length)">{{::row.tag}}</td>
+        <td class="description" rowspan="{{row.states.length}}" ng-if="!($index%row.states.length)">{{::row.description}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <script>
+  angular.module('report', []).controller('ReportController', function() {
+    //INJECT
+
+    var vm = this;
+    var countNumberOfHeading = function(heading) {
+      var count = 0;
+      angular.forEach(vm.data, function(row) {
+        if (row.heading === heading) {
+          count++;
+        }
+      });
+      return count;
+    };
+    this.numErrors = countNumberOfHeading('ERROR');
+    this.numWarnings = countNumberOfHeading('WARNING');
+    this.numNotices = countNumberOfHeading('NOTICE');
+  });
+  </script>
+</body>
+</html>
