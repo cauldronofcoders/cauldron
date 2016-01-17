@@ -1,25 +1,48 @@
 {
   "name": "cauldron",
   "version": "1.0.0",
+  "description": "Cauldron of all POCs develped by team",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "grunt test"
+  },
   "path": {
     "app": "app",
     "dist": "dist",
     "tmp": ".tmp",
     "test": "test"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://deepakkdhamuria:Bapu@1981@github.com/cauldronofcoders/cauldron.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cauldronofcoders/cauldron/issues"
+  },
+  "homepage": "https://github.com/cauldronofcoders/cauldron#readme",
   "dependencies": {
     "bower": "*"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-concat": "~0.5.1",
+    "grunt-contrib-connect": "^0.11.2",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-cssmin": "~0.7.0",
     "grunt-contrib-jshint": "~0.10.0",
     "grunt-contrib-nodeunit": "~0.4.1",
-    "grunt-contrib-uglify": "~0.5.0"
+    "grunt-contrib-qunit": "~0.7.0",
+    "grunt-contrib-uglify": "~0.5.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-open": "^0.2.3",
+    "grunt-rev": "~0.1.0",
+    "grunt-serve": "^0.1.6",
+    "grunt-usemin": "~2.0.2"
   },
   "engines": {
     "node": ">=4.0"
-  },
-  "scripts": {
-    "test": "grunt test"
   }
 }
