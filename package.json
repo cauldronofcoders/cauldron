@@ -4,7 +4,7 @@
   "description": "Cauldron of all POCs develped by team",
   "main": "Gruntfile.js",
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt"
   },
   "path": {
     "app": "app",
