@@ -3,14 +3,17 @@
 
 <body>
 
-    <form class="well">
+    <form name="serviceForm" class="well">
       <label>Key</label>
-      <input id="keyId" type="text" name="key" ng-model="newcontact.key" ng-required="required" />
+      <input id="key" type="text" name="key" ng-model="newcontact.key" required/>
+        <span ng-show="serviceForm.key.$error.required">Key is required.</span>
+</div>
       <br><br>
       <label>Value</label>
-      <input type="text" name="value" ng-model="newcontact.value" />
+      <input type="text" name="value" ng-model="newcontact.value" required/>
+    <span ng-show="serviceForm.value.$error.required">Value is required.</span>
       <br><br>
-      <input type="button" value="Save" ng-click="saveContact()" class="btn btn-primary" />
+      <input type="button" ng-disabled = "serviceForm.key.$invalid || serviceForm.value.$invalid" value="Save" ng-click="saveContact()" class="btn btn-primary" />
       <input type="button" value="Search" ng-click="getItem()" class="btn btn-primary" />
       <input type="button" value="Remove All" ng-click="removeAll()" class="btn btn-primary" />
     </form>
