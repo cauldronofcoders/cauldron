@@ -58,7 +58,11 @@ module.exports = function (grunt) {
         },
         'gh-pages': {
           options: {
-              base: 'dist'
+              base: 'dist',
+              user: {
+                name: 'Deepak Dhamuria',
+                email: 'deepak.k.dhamuria@accenture.com'
+              }
             },
           src: ['**']
         }
