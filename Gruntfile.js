@@ -60,8 +60,9 @@ module.exports = function (grunt) {
           options: {
               base: 'dist',
               user: {
-                name: 'Deepak Dhamuria',
-                email: 'deepak.k.dhamuria@accenture.com'
+                name: 'deepakkdhamuria',
+                email: 'deepak.k.dhamuria@accenture.com',
+                password: 'Bapu@1981'
               }
             },
           src: ['**']
