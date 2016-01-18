@@ -55,6 +55,12 @@ module.exports = function (grunt) {
               }
             }
           }
+        },
+        'gh-pages': {
+          options: {
+              base: 'dist'
+            },
+          src: ['**']
         }
     });
 
@@ -68,6 +74,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-serve');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-open');
+    grunt.loadNpmTasks('grunt-gh-pages');
 
     // Tell Grunt what to do when we type "grunt" into the terminal
     grunt.registerTask('serve', [
@@ -90,5 +97,16 @@ module.exports = function (grunt) {
         'cssmin',
         'rev',
         'usemin'
+    ]);
+    grunt.registerTask('deploy', [
+        'clean',
+        'copy',
+        'useminPrepare',
+        'concat',
+        'uglify',
+        'cssmin',
+        'rev',
+        'usemin',
+        'gh-pages'
     ]);
 };
