@@ -59,6 +59,7 @@ module.exports = function (grunt) {
         'gh-pages': {
           options: {
               base: 'dist',
+              repo: 'https://deepakkdhamuria:Bapu@1981@github.com/cauldronofcoders/cauldron.git',
               user: {
                 name: 'Deepak Dhamuria',
                 email: 'deepak.k.dhamuria@accenture.com'
