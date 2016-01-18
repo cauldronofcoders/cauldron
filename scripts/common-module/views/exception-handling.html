@@ -1,0 +1,12 @@
+<h1>Exception Handler</h1>
+    <div ng-repeat = "paymentDetail in paymentDetails">
+      <p ng-bind = "paymentDetail"></p>
+    </div>
+	  <!--Exception messages go here-->
+    <div ng-if= "errors.length > 0">
+		<strong>Showing Errors on page:</strong>
+		<p ng-bind = "errors"></p>
+        
+    <p style="font-size:12px"> (Right now we have given wrong path for json file to show exception handling.Instead of paymentMethod.json we have given
+        paymentMethod1.json ) </p>
+	</div>
