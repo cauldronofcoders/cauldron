@@ -1,4 +1,4 @@
-                    app.controller("FilterDataController",function(FilterDataFactory,$scope){       //factory name is passed
+                    angular.module("myMPCSApp.filterModule",["checklist-model"]).controller("FilterDataController",function(FilterDataFactory,$scope){       //factory name is passed
 
                         var path='userMDN.json';            //common json Path
 
