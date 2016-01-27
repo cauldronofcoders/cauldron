@@ -40,7 +40,13 @@
         templateUrl: 'scripts/common-module/views/sessionService.html',
         controller : 'SessionController'
       })
-	$urlRouterProvider.otherwise('/commonLanding');
+     .state('checkboxFilterDemo', {
+        url: '/checkboxFilterDemo',
+        templateUrl: 'scripts/common-module/views/checkbox-filter.html',
+        controller : 'FilterDataController'
+      })
+
+    $urlRouterProvider.otherwise('/commonLanding');
   })
   .constant('URL_CONST', {
     /* BASE URL constants */
