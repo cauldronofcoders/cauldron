@@ -1,5 +1,4 @@
-var app=angular.module("myMPCSApp.filterModule",["checklist-model"]);
-app.factory("FilterDataFactory",function($http){
+angular.module("myMPCSApp.filterModule",["checklist-model"]).factory("FilterDataFactory",function($http){
 
 
     var jsonData=function(response,path){
