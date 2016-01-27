@@ -45,7 +45,8 @@
         templateUrl: 'scripts/common-module/views/checkbox-filter.html',
         controller : 'FilterDataController'
       })
-	$urlRouterProvider.otherwise('/commonLanding');
+
+    $urlRouterProvider.otherwise('/commonLanding');
   })
   .constant('URL_CONST', {
     /* BASE URL constants */
