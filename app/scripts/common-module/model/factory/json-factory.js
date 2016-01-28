@@ -1,4 +1,4 @@
-angular.module("myMPCSApp.filterModule",[])
+angular.module('myMPCSApp.factoryData',[])
 .factory("FilterDataFactory",function($http){
 
 
