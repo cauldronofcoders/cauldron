@@ -22,5 +22,5 @@
                                'myMPCSApp.searchFactory',
                                'myMPCSApp.sessionController',
                                'myMPCSApp.sessionService',
-                             'myMPCSApp.filterModule'
+                                'myMPCSApp.filterModule'
                                ]);

@@ -1,11 +1,11 @@
-                       angular.module("myMPCSApp.filterModule",[]).controller("FilterDataController",function(FilterDataFactory,$scope){       //factory name is passed
+                       angular.module("myMPCSApp.filterModule",[]).controller("FilterDataController",function(FilterDataFactory,$scope){                                                                                                                                //factory name is passed
 
-                            var path='userMDN.json';            //common json Path
+                            var path='\app\scripts\common-module\model\mock-data\userMDN.json';            //common json Path
                             $scope.selectedVal=[];                      //mapped to the checked checkbox values
                             $scope.checked=true;
                             $scope.newData=[];
                            $scope.afterClickVal=[];
-                         //  $scope.filterdata=[];//to show all the data initially
+
                            FilterDataFactory.jsonData(function(response){
                                 $scope.userInfo=response;
                                                                         //Reading common json
@@ -17,7 +17,7 @@
 
                                $scope.checked=false;
                              $scope.afterClickVal[index]=checkboxVal;
-                             //alert(MDN);
+
 
                                            var url=MDN+".json";                             //creating specific json url
 
@@ -29,7 +29,7 @@
                                    },url);
 
 
-                            // console.log(accessData);
+
                                   }
 
                                    });
