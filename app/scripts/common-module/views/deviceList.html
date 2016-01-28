@@ -1,16 +1,21 @@
-<html
-<h1>Device List </h1>
- <table>
-    <tr>
-      <th>Device Name</th>
-      <th>Price</th>
-    </tr>
-    <tr ng-repeat="device in devices">
-      <td>{{device.deviceName}} <a href="#">
-          <img src="{{device.imageUrl}}" alt="phone" class="img-responsive img-width">
-          </a></td>
-      <td>{{device.price|currency}}</td>
-       <td><input type="button" ui-sref ="addToCart" value="Add to Cart"/></td>
-    </tr>
-  </table>
-</html>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="jumbotron">
+     <h2>MPCS Mobile</h2>
+    </div>
+
+
+  </div>
+    <div class="container-fluid">
+        <div class="row" class="col-md-6">
+      <div  id="mobileInfo" ng-repeat="device in devices" class="col-md-6">
+            <img src="{{device.imageUrl}}" alt="phone" class="img-responsive img-width">
+            <label>Device Name:</label> {{device.deviceName}}<br>
+            <label>Price:</label>{{device.currency}}{{device.price}}  <br>
+            <label>Availability:</label>{{device.availablility}} <input id="button-cart" class="btn btn-primary" ui-sref    ="addToCart" value="Add to Cart"/>
+
+        </div>
+     </div>
+        </div>
+</nav>
