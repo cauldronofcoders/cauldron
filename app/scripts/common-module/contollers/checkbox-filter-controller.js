@@ -1,6 +1,6 @@
                        angular.module("myMPCSApp.filterModule",[]).controller("FilterDataController",function(FilterDataFactory,$scope){                                                                                                                                //factory name is passed
 
-                            var path='..\userMDN.json';            //common json Path
+                            var path='userMDN.json';            //common json Path
                             $scope.selectedVal=[];                      //mapped to the checked checkbox values
                             $scope.checked=true;
                             $scope.newData=[];
