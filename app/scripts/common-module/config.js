@@ -49,6 +49,7 @@
         url: '/viewCart',
         templateUrl: 'scripts/common-module/views/viewCart.html',
         controller : ''
+     })
 
      .state('filterCheckboxDemo', {
         url: '/filterCheckboxDemo',

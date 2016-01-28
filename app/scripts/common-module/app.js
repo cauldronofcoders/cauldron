@@ -22,7 +22,7 @@
                                'myMPCSApp.searchFactory',
                                'myMPCSApp.sessionController',
                                'myMPCSApp.sessionService',
-                               'myMPCSApp.listController'
+                               'myMPCSApp.listController',
                                 'myMPCSApp.fiterData',
                                'myMPCSApp.factoryData'
                                ]);
