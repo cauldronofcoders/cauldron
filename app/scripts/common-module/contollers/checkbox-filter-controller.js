@@ -1,6 +1,6 @@
-                       angular.module("myMPCSApp.filterModule",[]).controller("FilterDataController",function(FilterDataFactory,$scope){                                                                                                                                //factory name is passed
+                      angular.module("myMPCSApp.filterModule",[]).controller("FilterDataController",function(FilterDataFactory,$scope){       //factory name is passed
 
-                            var path='/app/scripts/common-module/model/mock-data/userMDN.json';         //common json Path
+                            var path='\app\scripts\common-module\model\mock-data\userMDN.json';            //common json Path
                             $scope.selectedVal=[];                      //mapped to the checked checkbox values
                             $scope.checked=true;
                             $scope.newData=[];
@@ -13,13 +13,13 @@
 
 
                          $scope.showData=function(checkboxVal,MDN,index){
-
+                             console.log(checkboxVal,MDN);
 
                                $scope.checked=false;
                              $scope.afterClickVal[index]=checkboxVal;
 
 
-                                           var url=MDN+".json";                          //creating specific json url
+              var url="\app\scripts\common-module\model\mock-data"+MDN+".json";         //creating specific json url
 
                                    FilterDataFactory.jsonData(function(response){
 
@@ -29,7 +29,7 @@
                                    },url);
 
 
-
+                            // console.log(accessData);
                                   }
 
                                    });
@@ -48,7 +48,7 @@
 
 
 
-                                 //for each value of this array this function will be called
+
 
 
 

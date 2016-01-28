@@ -1,9 +1,5 @@
 
-
-
-
-
-     <div ng-repeat="user in userInfo">
+<div ng-repeat="user in userInfo">
 <input  type="checkbox" ng-model="selectedVal[$index]"  ng-click="showData(selectedVal[$index],user.MDN,$index)">{{user.MDN}}
 
      </div>
