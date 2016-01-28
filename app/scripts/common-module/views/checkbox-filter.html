@@ -1,11 +1,8 @@
-    <!DOCTYPE html>
-    <html>
-<head>
-         <script src="https://code.angularjs.org/1.5.0-rc.0/angular.min.js"></script>
-    <script src="json-factory.js"></script>     <!--factory to read json files-->
-    <script src="checkbox-filter-controller.js"></script>
-</head>
-    <body ng-app="myMPCSApp.filterModule" ng-controller="FilterDataController">
+
+
+
+
+
      <div ng-repeat="user in userInfo">
 <input  type="checkbox" ng-model="selectedVal[$index]"  ng-click="showData(selectedVal[$index],user.MDN,$index)">{{user.MDN}}{{selectedVal[$index]}}
 
@@ -21,11 +18,11 @@
         </div>
 
 
-    </body>
 
 
 
-    </html>
+
+
 
 
 
