@@ -1,0 +1,15 @@
+[{
+"MDN":"1",
+"Name" :"Alfreds",
+"CustomerId":"AL12"
+},
+{
+"MDN":"2",
+"Name":"chanchal",
+"CustomerId" : "bL12"
+},
+{"MDN":"3",
+ "Name" :"rajani",
+ "MDN" : "3",
+ "CustomerId" : "cL12"
+}]

@@ -21,5 +21,7 @@
                                'myMPCSApp.searchService',
                                'myMPCSApp.searchFactory',
                                'myMPCSApp.sessionController',
-                               'myMPCSApp.sessionService'
+                               'myMPCSApp.sessionService',
+                                'myMPCSApp.fiterData',
+                               'myMPCSApp.factoryData'
                                ]);
