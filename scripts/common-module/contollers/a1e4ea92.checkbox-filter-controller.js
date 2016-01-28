@@ -1,5 +1,5 @@
                       angular.module('myMPCSApp.fiterData',[]).controller('FilterDataController',function(FilterDataFactory,$scope){
-                          alert("entered");
+
                             var path='./scripts/common-module/model/mock-data/userMDN.json';            //common json Path
                             $scope.selectedVal=[];                      //mapped to the checked checkbox values
                             $scope.checked=true;
