@@ -4,7 +4,7 @@
 
 
      <div ng-repeat="user in userInfo">
-<input  type="checkbox" ng-model="selectedVal[$index]"  ng-click="showData(selectedVal[$index],user.MDN,$index)">{{user.MDN}}{{selectedVal[$index]}}
+<input  type="checkbox" ng-model="selectedVal[$index]"  ng-click="showData(selectedVal[$index],user.MDN,$index)">{{user.MDN}}
 
      </div>
        <div ng-show=checked ng-repeat="user in userInfo" >
@@ -13,7 +13,7 @@
 
       <div ng-show=afterClickVal[$index] ng-repeat="data in newData" >
 
-       <li>NAME:{{data.Name}}  MDN: {{data.MDN}}  CustomerID:{{data.CustomerId}} {{$index}}</li>
+       <li>NAME:{{data.Name}}  MDN: {{data.MDN}}  CustomerID:{{data.CustomerId}} </li>
 
         </div>
 
