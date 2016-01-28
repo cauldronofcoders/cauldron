@@ -1,7 +1,7 @@
 angular.module('myMPCSApp.sessionController', []).controller('SessionController', function($scope, SessionService) {
   $scope.saveContact = function() {
-    $scope.isSaveClicked = true;
     SessionService.save($scope.newcontact.key,$scope.newcontact.value);
+    $scope.isSaveClicked = true;
     $scope.newcontact = {};
 
   }

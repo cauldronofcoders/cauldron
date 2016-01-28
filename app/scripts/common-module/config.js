@@ -40,6 +40,16 @@
         templateUrl: 'scripts/common-module/views/sessionService.html',
         controller : 'SessionController'
       })
+    .state('deviceList', {
+        url: '/deviceList',
+        templateUrl: 'scripts/common-module/views/deviceList.html',
+        controller : 'listController'
+      })
+    .state('addToCart', {
+        url: '/viewCart',
+        templateUrl: 'scripts/common-module/views/viewCart.html',
+        controller : ''
+      })
 
     $urlRouterProvider.otherwise('/commonLanding');
   })
@@ -56,5 +66,6 @@
     'EARLIER_DATES_FIRST':'earlierDatesFirst',
     'HIGH_TO_LOW':'hightoLow',
     'LATER_DATES_FIRST':'laterDatesFirst',
-    'LOW_TO_HIGH':'lowToHigh'
+    'LOW_TO_HIGH':'lowToHigh',
+    'BASE_URL_LIST':'http://mangeshwanjari-test.apigee.net/v1/devices'
 });
