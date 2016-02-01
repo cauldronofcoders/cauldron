@@ -2,7 +2,7 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="jumbotron">
-        <h2>MPCS Mobile</h2><h3><a ui-sref = "addToCart">View Cart</a></h3>
+        <h2>MPCS Mobile</h2><h3><a ui-sref ="addToCart()" ng-click="getItem()">View Cart</a></h3>
     </div>
 
 
@@ -13,10 +13,9 @@
             <img src="{{device.imageUrl}}" alt="phone" class="img-responsive img-width">
             <label>Device Name:</label> {{device.deviceName}}<br>
             <label>Price:</label>{{device.currency}}{{device.price}}  <br>
-            <label>Availability:</label>{{device.availablility}} <input type="button" id="button-cart" ng-click="addToCart(device)" class="btn btn-primary" value="Add to Cart"/>
+            <label>Availability:</label>{{device.availablility}} <input type="button" id="button-cart" ng-click="addToCart(device.deviceName,device)" class="btn btn-primary" value="Add to Cart"/>
 
         </div>
      </div>
         </div>
 </nav>
-
