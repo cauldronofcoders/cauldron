@@ -1,15 +1,16 @@
 <html
-<h1>Shopping Cart </h1>
- <table>
-    <tr>
-      <th>Device Name</th>
-      <th>Price</th>
-    </tr>
+<h3>Shopping Cart </h3>
 
-    <tr ng-repeat="cart in shoppingCart">
-      <td>{{cart.deviceName}} </td>
-      <td>{{cart.price|currency}}</td>
 
-    </tr>
-  </table>
+    <div class="container-fluid">
+        <div class="row" class="col-md-6">
+      <div ng-repeat="cartItem in searchResult" class="col-md-6">
+            <img src="{{cartItem.imageUrl}}" alt="phone" class="img-responsive img-width">
+            <label>Device Name:</label> {{cartItem.deviceName}}<br>
+            <label>Price:</label>{{cartItem.currency}}{{cartItem.price}}  <br>
+
+        </div>
+     </div>
+        </div>
+
 </html>

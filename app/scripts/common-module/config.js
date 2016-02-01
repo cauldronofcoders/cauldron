@@ -48,7 +48,7 @@
     .state('addToCart', {
         url: '/viewCart',
         templateUrl: 'scripts/common-module/views/viewCart.html',
-        controller : ''
+        controller : 'listController'
      })
 
      .state('filterCheckboxDemo', {

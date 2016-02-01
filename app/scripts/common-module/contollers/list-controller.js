@@ -1,7 +1,8 @@
 
 angular.module('myMPCSApp.listController',[])
-.controller('listController', function($scope, URL_CONST, facadeApiFactory) {
+.controller('listController', function($scope,$rootScope, URL_CONST, facadeApiFactory,SessionService) {
 $scope.shoppingCart = [];
+
    /*@description function to get the list of phone devices */
   $scope.getDeviceData = function() {
     facadeApiFactory.getRequest(URL_CONST.BASE_URL_LIST,
@@ -13,18 +14,23 @@ $scope.shoppingCart = [];
   };
    $scope.getDeviceData();
 
-    $scope.addToCart = function (device) {
-			var found = false;
-			$scope.shoppingCart.forEach(function (item) {
-				if (item.deviceName === device.deviceName) {
-                   item.quantity++;
-					found = true;
-				}
-			});
-			if (!found) {
-               $scope.shoppingCart.push(angular.extend({quantity: 1}, device));
 
-			}
-		};
+   /*@description function to add phone device to cart */
+$scope.addToCart = function(id,value) {
+    SessionService.save(id,JSON.stringify(value));
+    $scope.shoppingCart.push(id);
+     }
+
+   /*@description function to get the list of phone devices added in cart */
+  $scope.getItem = function() {
+        $rootScope.searchResult=[];
+      for(var key in $scope.shoppingCart){
+          $rootScope.searchResult.push(JSON.parse(SessionService.getItem($scope.shoppingCart[key])));
+  }
+  }
+
+
 
 });
+
+
