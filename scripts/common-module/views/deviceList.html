@@ -1,14 +1,8 @@
 
 <nav class="navbar navbar-default">
   <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">MPCS MOBILE</a>
-    </div>
-    <ul class="nav navbar-nav navbar-right ">
-      <li><a href="#">View Cart</a></li>
-
-    </ul>
-
+    <div class="jumbotron">
+        <h2>MPCS Mobile</h2><h3><a ui-sref ="addToCart()" ng-click="getItem()">View Cart</a></h3>
   </div>
 </nav>
   </div>
@@ -18,10 +12,10 @@
             <img src="{{device.imageUrl}}" alt="phone" class="img-responsive img-width">
             <label>Device Name:</label> {{device.deviceName}}<br>
             <label>Price:</label>{{device.currency}}{{device.price}}  <br>
-            <label>Availability:</label>{{device.availablility}} <input type="button" id="button-cart" ng-click="addToCart(device)" class="btn btn-primary" value="Add to Cart"/>
+            <label>Availability:</label>{{device.availablility}} <input type="button" id="button-cart" ng-click="addToCart(device.deviceName,device)" class="btn btn-primary" value="Add to Cart"/>
 
         </div>
      </div>
         </div>
-
+</nav>
 

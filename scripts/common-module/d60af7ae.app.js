@@ -24,5 +24,6 @@
                                'myMPCSApp.sessionService',
                                'myMPCSApp.listController',
                                 'myMPCSApp.fiterData',
+                               'myMPCSApp.factoryData',
                                'myMPCSApp.factoryData'
                                ]);
