@@ -2,13 +2,13 @@
 <h3>Shopping Cart </h3>
 
 
-    <div class="container-fluid">
+    <div class="container-fluid" >
         <div class="row" class="col-md-6">
       <div ng-repeat="cartItem in searchResult" class="col-md-6">
             <img src="{{cartItem.imageUrl}}" alt="phone" class="img-responsive img-width">
-            <label>Device Name:</label> {{cartItem.deviceName}}<br>
-            <label>Price:</label>{{cartItem.currency}}{{cartItem.price}}  <br>
-
+            <label>Device Name:</label> {{cartItem.deviceDetail.deviceName}}<br>
+            <label>Price:</label>{{cartItem.deviceDetail.currency}}{{cartItem.deviceDetail.price}}  <br>
+              <label>Quantity:</label>{{cartItem.quant}}  <br>
         </div>
      </div>
         </div>
