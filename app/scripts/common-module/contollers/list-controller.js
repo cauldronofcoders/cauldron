@@ -2,6 +2,10 @@
 angular.module('myMPCSApp.listController',[])
 .controller('listController', function($scope,$rootScope, URL_CONST, facadeApiFactory,SessionService) {
 $scope.shoppingCart = [];
+  $scope.shopCart = {
+        deviceDetail : '',
+        qty : ''
+    } ;
 
    /*@description function to get the list of phone devices */
   $scope.getDeviceData = function() {
@@ -18,15 +22,10 @@ $scope.shoppingCart = [];
    /*@description function to add phone device to cart */
 $scope.addToCart = function(id,value,quantity) {
     $scope.found = false;
-
-    $scope.shopCart = {
-        deviceDetail : value,
-        quant : quantity
-    } ;
-
+    $scope.shopCart.deviceDetail = value;
           for(var item in $scope.shoppingCart){
         if($scope.shoppingCart[item]==id){
-            $scope.shopCart.quant = $scope.shopCart.quant+quantity;
+             $scope.shopCart.qty = $scope.shopCart.qty+quantity;
             SessionService.save(id,JSON.stringify($scope.shopCart));
              $scope.found = true;
         }
@@ -34,12 +33,13 @@ $scope.addToCart = function(id,value,quantity) {
         }
 
 
-        // new item, add now
+     // new item, add now
         if (!$scope.found) {
+            $scope.shopCart.qty = quantity;
             SessionService.save(id,JSON.stringify($scope.shopCart));
             $scope.shoppingCart.push(id);
         }
-             }
+                    }
 
 
    /*@description function to get the list of phone devices added in cart */
@@ -50,8 +50,10 @@ $scope.addToCart = function(id,value,quantity) {
 
   }
   }
-
-
+/* @description  - function to remove a product from cart page*/
+ $scope.removeProduct = function(key) {
+    SessionService.removeItem(key);
+  }
 
 });
 
