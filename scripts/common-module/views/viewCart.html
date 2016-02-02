@@ -1,16 +1,28 @@
 <html
 <h3>Shopping Cart </h3>
+<div class="container-fluid"  >
+    {{cartItem.deviceName}}
+ <table class=table>
+        <tr class="active">
+        <th>Device Name</th>
+        <th> Image</th>
+        <th>Price</th>
+        <th>Quantity</th>
+             </tr>
+
+       <tr  ng-repeat="cartItem in searchResult"><td>{{cartItem.deviceName}}</td>
+           <td><img src="{{cartItem.imageUrl}}" alt="phone"></td>
+        <td>{{cartItem.currency}}{{cartItem.price}}</td>
+     </tr>
+
+     </table>
+    </div>
 
 
-    <div class="container-fluid">
-        <div class="row" class="col-md-6">
-      <div ng-repeat="cartItem in searchResult" class="col-md-6">
-            <img src="{{cartItem.imageUrl}}" alt="phone" class="img-responsive img-width">
-            <label>Device Name:</label> {{cartItem.deviceName}}<br>
-            <label>Price:</label>{{cartItem.currency}}{{cartItem.price}}  <br>
-
-        </div>
-     </div>
-        </div>
 
 </html>
+
+
+
+
+
