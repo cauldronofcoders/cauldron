@@ -11,8 +11,7 @@ if (typeof(sessionStorage) != 'undefined') {
     //save method adds the new key value pair
     this.save = function(key,value) {
       sessionStorage.setItem(key,value);
-        alert("value is saved ");
-    }
+         }
 
     //simply search list for given key
     //and returns value if found
