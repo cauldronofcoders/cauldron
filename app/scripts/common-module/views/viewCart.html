@@ -9,6 +9,7 @@
         <th>Quantity</th>
              </tr>
 
+
        <tr  ng-repeat="cartItem in searchResult"><td>{{cartItem.deviceDetail.deviceName}}</td>
            <td><img src="{{cartItem.deviceDetail.imageUrl}}" alt="phone"></td>
         <td>{{cartItem.deviceDetail.currency}}{{cartItem.deviceDetail.price}}</td>
@@ -17,6 +18,7 @@
 
      </table>
 </div>
+
 
 </html>
 

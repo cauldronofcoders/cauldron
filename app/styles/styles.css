@@ -45,4 +45,9 @@ max-height: 50%;
 .jumbotron{
   background-color: aqua;
 }
+.container-fluid  .row  .table tr.active th{
+background-color: aquamarine;
+    padding: 2px;
+
+}
 
