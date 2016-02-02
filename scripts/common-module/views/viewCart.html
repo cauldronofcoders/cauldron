@@ -3,17 +3,20 @@
 <div class="container-fluid">
  <table class=table>
         <tr class="active">
-        <th>Device Name</th>
+           <th>Device Name</th>
         <th> Image</th>
         <th>Price</th>
         <th>Quantity</th>
              </tr>
 
 
-       <tr  ng-repeat="cartItem in searchResult"><td>{{cartItem.deviceDetail.deviceName}}</td>
+       <tr  ng-repeat="cartItem in searchResult">
+
+           <td>{{cartItem.deviceDetail.deviceName}}</td>
            <td><img src="{{cartItem.deviceDetail.imageUrl}}" alt="phone"></td>
         <td>{{cartItem.deviceDetail.currency}}{{cartItem.deviceDetail.price}}</td>
-            <td>{{cartItem.quant}}</td>
+            <td>{{cartItem.qty}}</td>
+           <td ng-hide=""><a href="#" ng-click="removeProduct({{cartItem.deviceDetail.deviceName}})">Remove</a></td>
      </tr>
 
      </table>
