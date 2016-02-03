@@ -25,7 +25,7 @@ if (typeof(sessionStorage) != 'undefined') {
     // if found
     this.removeItem = function(key) {
       sessionStorage.removeItem(key);
-    }
+        }
 
     //remove all items
     this.removeAll = function() {

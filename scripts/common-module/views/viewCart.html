@@ -1,4 +1,8 @@
-<html
+<html>
+
+<div class="container-fluid">
+ <table class=table>
+        <tr class="active">
       <div class="nav navbar-header">
 <nav class="nav navbar-default">
 <h4>Shopping Cart</h4>
@@ -9,11 +13,12 @@
 <div ng-show="dataPresent" class="container-fluid">
 
  <table class="table">
-        <tr class="active">
+        <tr ng-hide="searchResult.length==0" class="active">
            <th>Device Name</th>
         <th> Image</th>
         <th>Price</th>
         <th>Quantity</th>
+            <th></th>
              </tr>
 
 
@@ -32,7 +37,7 @@
 </select>
 </td>
 
-<td><a href="#" ng-click="removeProduct({{cartItem.deviceDetail.skuId}})">Remove</a></td>
+<td><a href="#" ng-click="removeProduct(cartItem.deviceDetail.skuId,$index)">Remove</a></td>
      </tr>
 
      </table>
