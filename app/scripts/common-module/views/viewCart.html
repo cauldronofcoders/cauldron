@@ -13,7 +13,15 @@
        <tr  ng-repeat="cartItem in searchResult"><td>{{cartItem.deviceDetail.deviceName}}</td>
            <td><img src="{{cartItem.deviceDetail.imageUrl}}" alt="phone"></td>
         <td>{{cartItem.deviceDetail.currency}}{{cartItem.deviceDetail.price}}</td>
-            <td>{{cartItem.quant}}</td>
+            <td>
+<select  ng-model="quantity_selected" ng-change= "updateQuantity(cartItem.deviceDetail.deviceName,quantity_selected,cartItem.deviceDetail)">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+</select>
+</td>
+           <td>changed value{{quantity_selected}}</td>
      </tr>
 
      </table>
