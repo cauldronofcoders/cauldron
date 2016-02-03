@@ -13,8 +13,8 @@
 </nav>
 <div  id="table"  class="container-fluid">
 
- <table class="table">
-        <tr ng-hide="searchResult.length==0" class="active">
+ <table ng-hide="searchResult.length==0" class="table">
+        <tr class="active">
            <th>Device Name</th>
         <th> Image</th>
         <th>Price</th>
@@ -38,7 +38,10 @@
 
      </tr>
 
+     <tr><a href="#"  id="removeAll" class="pull-right" ng-click="removeAll()">Remove All</tr>
+
      </table>
+    <div ng-show="searchResult.length==0">Your cart is empty.</div>
 </div>
 
 
