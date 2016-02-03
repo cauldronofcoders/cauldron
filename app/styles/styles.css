@@ -33,14 +33,29 @@ margin-left: 52px;
 
 #mobileInfo{
     margin-top: 54px;
+
+}
+.container-fluid{
+  background-color: lavenderblush;
+}
+#imagesList{
+   margin-top: auto;
+     background-color: lavenderblush;
+
+}
+#table{
+    padding:0px;
+}
+#remove{
+   margin-left:50px;
 }
 .img-responsive{
-  margin-top: 78px;
+    margin-top: 78px;
     margin-bottom:18px;
     padding:-31px;
     position: relative;
-max-width:62%;
-max-height: 50%;
+    max-width:62%;
+    max-height: 50%;
 }
 
 

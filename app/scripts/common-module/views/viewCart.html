@@ -1,16 +1,14 @@
-<html>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand " href="#">Shopping Cart</a>
+    </div>
 
-<div class="container-fluid">
- <table class=table>
-        <tr class="active">
-      <div class="nav navbar-header">
-<nav class="nav navbar-default">
-<h4>Shopping Cart</h4>
 
+
+    </div>
 </nav>
-
-</div>
-<div ng-show="dataPresent" class="container-fluid">
+<div  id="table"  class="container-fluid">
 
  <table class="table">
         <tr ng-hide="searchResult.length==0" class="active">
@@ -34,17 +32,16 @@
     <option value="2">2</option>
     <option value="3">3</option>
     <option value="4">4</option>
-</select>
+</select><button  id="remove" class="btn btn-primary" ng-click="removeProduct(cartItem.deviceDetail.skuId,$index)">Remove
 </td>
 
-<td><a href="#" ng-click="removeProduct(cartItem.deviceDetail.skuId,$index)">Remove</a></td>
      </tr>
 
      </table>
 </div>
 
 
-</html>
+
 
 
 
