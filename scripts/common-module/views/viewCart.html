@@ -1,7 +1,14 @@
 <html
-<h3>Shopping Cart </h3>
-<div class="container-fluid">
- <table class=table>
+      <div class="nav navbar-header">
+<nav class="nav navbar-default">
+<h4>Shopping Cart</h4>
+
+</nav>
+
+</div>
+<div ng-show="dataPresent" class="container-fluid">
+
+ <table class="table">
         <tr class="active">
            <th>Device Name</th>
         <th> Image</th>
@@ -10,7 +17,7 @@
              </tr>
 
 
-       <tr  ng-repeat="cartItem in searchResult">
+       <tr ng-repeat="cartItem in searchResult">
 
            <td>{{cartItem.deviceDetail.deviceName}}</td>
            <td><img src="{{cartItem.deviceDetail.imageUrl}}" alt="phone"></td>
@@ -25,7 +32,7 @@
 </select>
 </td>
 
-<td ng-hide=""><a href="#" ng-click="removeProduct({{cartItem.deviceDetail.skuId}})">Remove</a></td>
+<td><a href="#" ng-click="removeProduct({{cartItem.deviceDetail.skuId}})">Remove</a></td>
      </tr>
 
      </table>

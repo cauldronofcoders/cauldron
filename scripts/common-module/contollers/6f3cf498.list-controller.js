@@ -51,13 +51,24 @@ $scope.updateQuantity=function(id,updatedQty,value){
    /*@description function to get the list of phone devices added in cart */
   $scope.getItem = function() {
         $rootScope.searchResult=[];
+
       for(var key in $scope.shoppingCart){
+
           $rootScope.searchResult.push(JSON.parse(SessionService.getItem($scope.shoppingCart[key])));
 
   }
+
+        if($rootScope.searchResult.length==0)
+            {
+                $rootScope.dataPresent=false;
+            }
+      else{
+          $rootScope.dataPresent=true;
+      }
   }
 /* @description  - function to remove a product from cart page*/
  $scope.removeProduct = function(key) {
+
      alert("Inside remove product method");
     SessionService.removeItem(key);
   }
