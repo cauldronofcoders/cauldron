@@ -4,16 +4,19 @@
       <a class="navbar-brand " href="#">Shopping Cart</a>
     </div>
 
+
+
     </div>
 </nav>
 <div  id="table" ng-show="dataPresent" class="container-fluid">
 
  <table class="table">
-        <tr class="active">
+        <tr ng-hide="searchResult.length==0" class="active">
            <th>Device Name</th>
         <th> Image</th>
         <th>Price</th>
         <th>Quantity</th>
+            <th></th>
              </tr>
 
 
@@ -29,9 +32,8 @@
     <option value="2">2</option>
     <option value="3">3</option>
     <option value="4">4</option>
-</select><button  id="remove" class="btn btn-primary" ng-click="removeProduct({{cartItem.deviceDetail.skuId}})">Remove
+</select><button  id="remove" class="btn btn-primary" ng-click="removeProduct(cartItem.deviceDetail.skuId,$index)">Remove
 </td>
-
 
      </tr>
 

@@ -50,17 +50,12 @@ margin-left: 52px;
    margin-left:50px;
 }
 .img-responsive{
-  margin-top: 78px;
+    margin-top: 78px;
     margin-bottom:18px;
     padding:-31px;
     position: relative;
-max-width:62%;
-max-height: 50%;
+    max-width:62%;
+    max-height: 50%;
 }
 
-.container-fluid {
-    padding-right: 0px;
-}
-.navbar-light{
-    background-color: aquamarine;
-}
+
