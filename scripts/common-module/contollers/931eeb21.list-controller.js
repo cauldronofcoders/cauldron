@@ -2,7 +2,7 @@
 angular.module('myMPCSApp.listController',[])
 .controller('listController', function($scope,$rootScope, URL_CONST, facadeApiFactory,SessionService) {
 $scope.shoppingCart = [];
-$scope.quantity_selected=1;
+
   $scope.shopCart = {
         deviceDetail : '',
         qty : ''
@@ -43,12 +43,9 @@ $scope.addToCart = function(id,value,quantity) {
                     }
 
 $scope.updateQuantity=function(id,updatedQty,value){
-      alert("id is :::"+id);
     $scope.shopCart.deviceDetail = value;
       $scope.shopCart.qty = updatedQty;
  SessionService.save(id,JSON.stringify($scope.shopCart));
-   alert("inside function,quantt :::"+$scope.shopCart.qty);
-
 }
 
    /*@description function to get the list of phone devices added in cart */
@@ -61,6 +58,7 @@ $scope.updateQuantity=function(id,updatedQty,value){
   }
 /* @description  - function to remove a product from cart page*/
  $scope.removeProduct = function(key) {
+     alert("Inside remove product method");
     SessionService.removeItem(key);
   }
 

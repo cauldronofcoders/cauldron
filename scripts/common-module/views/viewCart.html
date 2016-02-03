@@ -16,7 +16,7 @@
            <td><img src="{{cartItem.deviceDetail.imageUrl}}" alt="phone"></td>
         <td>{{cartItem.deviceDetail.currency}}{{cartItem.deviceDetail.price}}</td>
             <td>
-<select  ng-model="cartItem.qty" ng-change= "updateQuantity(cartItem.deviceDetail.deviceName,quantity_selected,cartItem.deviceDetail)">
+<select  ng-model="cartItem.qty" ng-change= "updateQuantity(cartItem.deviceDetail.skuId,quantity_selected,cartItem.deviceDetail)">
     <option value="cartItem.qty">{{cartItem.qty}}</option>
     <option value="1">1</option>
     <option value="2">2</option>
@@ -25,7 +25,7 @@
 </select>
 </td>
 
-<td ng-hide=""><a href="#" ng-click="removeProduct({{cartItem.deviceDetail.deviceName}})">Remove</a></td>
+<td ng-hide=""><a href="#" ng-click="removeProduct({{cartItem.deviceDetail.skuId}})">Remove</a></td>
      </tr>
 
      </table>
