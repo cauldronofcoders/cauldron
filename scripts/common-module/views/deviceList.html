@@ -1,12 +1,21 @@
 
 <nav class="navbar navbar-default">
   <div class="container-fluid">
-    <div class="jumbotron">
-        <h2>MPCS Mobile</h2><h3><a ui-sref ="addToCart()" ng-click="getItem()">View Cart</a></h3>
+
+    <div class="navbar-header">
+      <a class="navbar-brand " href="#">MPCS Mobile</a>
+    </div>
+
+    <ul class="nav navbar-nav pull-right">
+      <li><a ui-sref ="addToCart()" id="view Cart" ng-click="getItem()">View Cart</a></li>
+
+    </ul>
+
   </div>
 </nav>
-  </div>
-    <div class="container-fluid">
+
+    <div id="imagesList" class="container-fluid">
+
         <div class="row" class="col-md-6">
       <div  id="mobileInfo" ng-repeat="device in devices" class="col-md-6">
             <img src="{{device.imageUrl}}" alt="phone" class="img-responsive img-width">
