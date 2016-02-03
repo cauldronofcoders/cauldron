@@ -3,25 +3,29 @@
 <div class="container-fluid">
  <table class=table>
         <tr class="active">
-        <th>Device Name</th>
+           <th>Device Name</th>
         <th> Image</th>
         <th>Price</th>
         <th>Quantity</th>
              </tr>
 
 
-       <tr  ng-repeat="cartItem in searchResult"><td>{{cartItem.deviceDetail.deviceName}}</td>
+       <tr  ng-repeat="cartItem in searchResult">
+
+           <td>{{cartItem.deviceDetail.deviceName}}</td>
            <td><img src="{{cartItem.deviceDetail.imageUrl}}" alt="phone"></td>
         <td>{{cartItem.deviceDetail.currency}}{{cartItem.deviceDetail.price}}</td>
             <td>
-<select  ng-model="quantity_selected" ng-change= "updateQuantity(cartItem.deviceDetail.deviceName,quantity_selected,cartItem.deviceDetail)">
+<select  ng-model="cartItem.qty" ng-change= "updateQuantity(cartItem.deviceDetail.deviceName,quantity_selected,cartItem.deviceDetail)">
+    <option value="cartItem.qty">{{cartItem.qty}}</option>
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
     <option value="4">4</option>
 </select>
 </td>
-           <td>changed value{{quantity_selected}}</td>
+
+<td ng-hide=""><a href="#" ng-click="removeProduct({{cartItem.deviceDetail.deviceName}})">Remove</a></td>
      </tr>
 
      </table>

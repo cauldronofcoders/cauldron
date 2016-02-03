@@ -2,8 +2,12 @@
 angular.module('myMPCSApp.listController',[])
 .controller('listController', function($scope,$rootScope, URL_CONST, facadeApiFactory,SessionService) {
 $scope.shoppingCart = [];
-$rootScope.quantity_selected=1;
-    alert("value after changing as text"+$scope.quantity_selected);
+$scope.quantity_selected=1;
+  $scope.shopCart = {
+        deviceDetail : '',
+        qty : ''
+    } ;
+
    /*@description function to get the list of phone devices */
   $scope.getDeviceData = function() {
     facadeApiFactory.getRequest(URL_CONST.BASE_URL_LIST,
@@ -16,48 +20,34 @@ $rootScope.quantity_selected=1;
    $scope.getDeviceData();
 
 
-   /*@description function to add phone device to cart */
+  /*@description function to add phone device to cart */
 $scope.addToCart = function(id,value,quantity) {
     $scope.found = false;
- $scope.shopCart = {
-        deviceDetail : value,
-        quant : $scope.quantity_selected
-    } ;
-
-console.log("quant"+$scope.shopCart.quant);
+    $scope.shopCart.deviceDetail = value;
           for(var item in $scope.shoppingCart){
         if($scope.shoppingCart[item]==id){
-            $scope.shopCart.quant = $scope.quantity_selected+1;
+             $scope.shopCart.qty = $scope.shopCart.qty+quantity;
             SessionService.save(id,JSON.stringify($scope.shopCart));
              $scope.found = true;
-            console.log("same product"+$scope.shopCart.quant);
         }
 
         }
 
 
-        // new item, add now
+     // new item, add now
         if (!$scope.found) {
-           $scope.quantity_selected=1;
-            $scope.shopCart.quant= $scope.quantity_selected;
+            $scope.shopCart.qty = quantity;
             SessionService.save(id,JSON.stringify($scope.shopCart));
             $scope.shoppingCart.push(id);
-
-            console.log("new  product added"+$scope.shopCart.quant)
         }
-             }
+                    }
 
-
-$scope.updateQuantity=function(id,change,value){
-
-
-    $scope.shopCart_update = {
-        deviceDetail : value,
-        quant : change
-    } ;
-  alert("id is :::"+id);
- SessionService.save(id,JSON.stringify( $scope.shopCart_update));
-   alert("inside function,quantt :::"+$scope.shopCart_update.quant);
+$scope.updateQuantity=function(id,updatedQty,value){
+      alert("id is :::"+id);
+    $scope.shopCart.deviceDetail = value;
+      $scope.shopCart.qty = updatedQty;
+ SessionService.save(id,JSON.stringify($scope.shopCart));
+   alert("inside function,quantt :::"+$scope.shopCart.qty);
 
 }
 
@@ -69,8 +59,10 @@ $scope.updateQuantity=function(id,change,value){
 
   }
   }
-
-
+/* @description  - function to remove a product from cart page*/
+ $scope.removeProduct = function(key) {
+    SessionService.removeItem(key);
+  }
 
 });
 
