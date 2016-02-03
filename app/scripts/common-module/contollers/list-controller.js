@@ -2,7 +2,6 @@
 angular.module('myMPCSApp.listController',[])
 .controller('listController', function($scope,$rootScope, URL_CONST, facadeApiFactory,SessionService) {
 $scope.shoppingCart = [];
-
   $scope.shopCart = {
         deviceDetail : '',
         qty : ''
@@ -33,7 +32,6 @@ $scope.addToCart = function(id,value,quantity) {
 
         }
 
-
      // new item, add now
         if (!$scope.found) {
             $scope.shopCart.qty = quantity;
@@ -51,26 +49,15 @@ $scope.updateQuantity=function(id,updatedQty,value){
    /*@description function to get the list of phone devices added in cart */
   $scope.getItem = function() {
         $rootScope.searchResult=[];
-
       for(var key in $scope.shoppingCart){
-
           $rootScope.searchResult.push(JSON.parse(SessionService.getItem($scope.shoppingCart[key])));
-
   }
-
-        if($rootScope.searchResult.length==0)
-            {
-                $rootScope.dataPresent=false;
-            }
-      else{
-          $rootScope.dataPresent=true;
-      }
   }
 /* @description  - function to remove a product from cart page*/
- $scope.removeProduct = function(key) {
 
-     alert("Inside remove product method");
+ $scope.removeProduct = function(key,idx) {
     SessionService.removeItem(key);
+     $scope.searchResult.splice(idx, 1);
   }
 
 });
