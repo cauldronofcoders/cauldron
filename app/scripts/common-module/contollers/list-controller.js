@@ -32,7 +32,6 @@ $scope.addToCart = function(id,value,quantity) {
 
         }
 
-
      // new item, add now
         if (!$scope.found) {
             $scope.shopCart.qty = quantity;
@@ -55,10 +54,10 @@ $scope.updateQuantity=function(id,updatedQty,value){
   }
   }
 /* @description  - function to remove a product from cart page*/
+
  $scope.removeProduct = function(key,idx) {
     SessionService.removeItem(key);
      $scope.searchResult.splice(idx, 1);
-     $scope.isItemRemoved = true;
   }
 
 });

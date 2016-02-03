@@ -1,12 +1,24 @@
-<html
-<h3>Shopping Cart </h3>
+<html>
+
 <div class="container-fluid">
  <table class=table>
+        <tr class="active">
+      <div class="nav navbar-header">
+<nav class="nav navbar-default">
+<h4>Shopping Cart</h4>
+
+</nav>
+
+</div>
+<div ng-show="dataPresent" class="container-fluid">
+
+ <table class="table">
         <tr ng-hide="searchResult.length==0" class="active">
            <th>Device Name</th>
         <th> Image</th>
         <th>Price</th>
         <th>Quantity</th>
+            <th></th>
              </tr>
 
 
