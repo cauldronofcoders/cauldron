@@ -60,6 +60,11 @@ $scope.updateQuantity=function(id,updatedQty,value){
      $scope.searchResult.splice(idx, 1);
   }
 
+   $scope.removeAll = function() {
+    SessionService.removeAll();
+    $rootScope.searchResult =[];
+  }
+
 });
 
 
