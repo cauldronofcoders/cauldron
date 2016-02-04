@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand " href="#">Shopping Cart</a><br>
+      <h4>Shopping Cart</h4><br>
         <p class="navbar-brand">
   Thanks for shopping.This is your shopping cart. Here you can edit the items,
   go back to the store, clear the cart.</p>
@@ -11,7 +11,7 @@
 
     </div>
 </nav>
-<div  id="table"  class="container-fluid">
+<div  id="searchResult"  class="container-fluid">
 
  <table ng-hide="searchResult.length==0" class="table">
         <tr class="active">
@@ -21,6 +21,8 @@
         <th>Quantity</th>
             <th></th>
              </tr>
+     <tr><a ng-hide="searchResult.length==0" href="#" class="pull-right" ng-click="removeAll()">Remove All</a></tr>
+
        <tr ng-repeat="cartItem in searchResult">
 
            <td>{{cartItem.deviceDetail.deviceName}}</td>
@@ -38,10 +40,10 @@
 
      </tr>
 
-     <tr><a href="#"  id="removeAll" class="pull-right" ng-click="removeAll()">Remove All</tr>
+     <tr>  <h4 class="pull-left" ng-show="searchResult.length==0">Your cart is empty.</h4> </tr>
 
      </table>
-    <div ng-show="searchResult.length==0">Your cart is empty.</div>
+
 </div>
 
 
